@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memar Elara</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Splide CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNavbar">
+            <div class="container">
+                <!-- Centered Navigation Items -->
+                <div class="navbar-nav mx-auto d-flex align-items-center">
+                    <!-- Logo -->
+                    <a class="navbar-brand me-5" href="#home">
+                        <img src="../assets/images/vector.png" alt="Memar Elara" class="img-fluid logo-img">
+                    </a>
+
+                    <!-- Navigation Links -->
+                    <div class="nav-links d-flex gap-4">
+                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#about">About Us</a>
+                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#invest">Invest with us</a>
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <!-- Background Video -->
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="../assets/videos/hero-video.mp4" type="video/mp4">
+            <source src="../assets/videos/hero-video.webm" type="video/webm">
+            <!-- Fallback for browsers that don't support video -->
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Video Overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h1 class="hero-title">Welcome to Memar Elara</h1>
+                        <p class="hero-subtitle">Your trusted partner in architectural excellence and innovative design
+                            solutions</p>
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-lg me-3">Get Started</button>
+                            <button class="btn btn-outline-light btn-lg">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Construction Quality Section -->
+    <section id="construction-quality" class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="display-6 fw-bold">Construction Quality</h2>
+                    <p class="text-muted">Excellence in every detail — materials, methods, and craftsmanship.</p>
+                </div>
+            </div>
+
+            <div class="splide" id="qualitySplide" aria-label="Construction Quality Highlights">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <!-- Slide 1 (odd): media left, text right -->
+                        <li class="splide__slide">
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-6">
+                                    <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+                                        <video class="w-100 h-100" autoplay muted loop playsinline>
+                                            <source src="../assets/videos/hero-video.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h3 class="fw-bold mb-3">Premium Materials</h3>
+                                    <p class="text-muted mb-4">We source high-grade materials to ensure durability,
+                                        safety, and aesthetic integrity across every project.</p>
+                                    <ul class="mb-0">
+                                        <li>Certified structural steel and concrete</li>
+                                        <li>Moisture and thermal-resistant assemblies</li>
+                                        <li>Long-life finishes and fixtures</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Slide 2: reverse on large screens to alternate -->
+                        <li class="splide__slide">
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-6">
+                                    <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+                                        <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=1600&auto=format&fit=crop"
+                                            alt="Precision construction methods" class="w-100 h-100 object-fit-cover">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h3 class="fw-bold mb-3">Precision Methods</h3>
+                                    <p class="text-muted mb-4">From foundation to finish, our teams follow rigorous
+                                        QA/QC procedures with documented checkpoints.</p>
+                                    <ul class="mb-0">
+                                        <li>BIM-driven coordination</li>
+                                        <li>On-site testing and inspection</li>
+                                        <li>ISO-aligned process controls</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Slide 3: media left, text right again -->
+                        <li class="splide__slide">
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-6">
+                                    <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+                                        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1600&auto=format&fit=crop"
+                                            alt="Skilled Craftsmanship" class="w-100 h-100 object-fit-cover">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h3 class="fw-bold mb-3">Skilled Craftsmanship</h3>
+                                    <p class="text-muted mb-4">Our crews combine modern tools with seasoned expertise to
+                                        achieve refined details that last.</p>
+                                    <ul class="mb-0">
+                                        <li>Certified trades and ongoing training</li>
+                                        <li>Mockups and sample approvals</li>
+                                        <li>Finishing standards and punchlist rigor</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="splide-progress mt-4">
+                    <div class="splide-progress-bar" id="qualityProgress"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Main Content -->
+    <main>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Splide JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../assets/app.js"></script>
+</body>
+
+</html>
