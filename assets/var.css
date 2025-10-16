@@ -3,6 +3,8 @@
     --me-brown-rgb: 93, 31, 45;
     --me-golden-hex: #9E772C;
     --me-golden-rgb: 158, 119, 44;
+    --me-bg: #FFF5EC;
+    --me-bg-rgb: 255, 245, 236;
 
     /* Breakpoints (Mobile → Desktop) */
     --breakpoint-xs: 480px;
@@ -36,8 +38,18 @@
 
 .heading-text-wrapper .heading-text {
     color: var(--me-brown-hex);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
 }
 
 .heading-side-icon {
     height: 50px;
+}
+
+.section-heading-wrapper .heading-tagline {
+    font-size: 1rem;
+    margin-top: 5px;
+    font-weight: 600;
+    color: var(--me-golden-hex);
 }

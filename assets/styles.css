@@ -7,12 +7,13 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 0;
+    background-color: var(--me-bg);
     /* Remove padding since hero section will be full height */
 }
 
 /* Navbar Styles */
 #mainNavbar {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(var(--me-bg-rgb), 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
@@ -256,6 +257,28 @@ body {
     }
 }
 
+.hero-ribbon {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    background: url('../assets/resource/texture.png');
+    background-size: cover;
+    color: #fff;
+    padding: 5px 30px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #000;
+}
+
+.hero-ribbon .ribbon-text {
+    margin: 0;
+    color: var(--me-bg);
+    /* background-image: url('../assets/resource/texture_3.png');
+    background-position: top right;
+    filter: brightness(2);
+    -webkit-background-clip: text;
+    background-clip: text; */
+}
+
 /* Construction Quality Section */
 #construction-quality .splide__slide {
     padding-top: 0.25rem;
@@ -294,7 +317,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../assets/resource/texture.png');
+    background-image: url('../assets/resource/texture_2.png');
     background-size: cover;
     background-position: center;
     padding: 2rem 0;
@@ -303,6 +326,37 @@ body {
 .stats-image-wrapper img {
     max-width: 100%;
     height: 80vh;
+}
+
+.testimonial-item {
+    /* height: 300px; */
+    background-image: url('../assets/resource/texture.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 1rem;
+}
+
+.testimonial-quote-icon {
+    padding: 1rem;
+    font-size: 4rem;
+    background-image: url('../assets/resource/texture_3.png');
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.testimonial-quote-icon.end-quote {
+    transform: rotate(180deg);
+
+}
+
+.testimonial-text {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 /* Alternate image/text per slide on large screens */

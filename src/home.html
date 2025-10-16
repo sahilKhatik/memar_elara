@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../assets/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
 </head>
 
 <body>
@@ -25,7 +27,7 @@
                 <div class="navbar-nav mx-auto d-flex align-items-center">
                     <!-- Logo -->
                     <a class="navbar-brand me-5" href="#home">
-                        <img src="../assets/images/vector.png" alt="Memar Elara" class="img-fluid logo-img">
+                        <img src="../assets/images/vector_golden.png" alt="Memar Elara" class="img-fluid logo-img">
                     </a>
 
                     <!-- Navigation Links -->
@@ -44,17 +46,15 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <!-- Background Video -->
-        <!-- <video class="hero-video" autoplay muted loop playsinline>
-            <source src="../assets/videos/hero-video.mp4" type="video/mp4">
-            <source src="../assets/videos/hero-video.webm" type="video/webm">
-            Your browser does not support the video tag.
-        </video> -->
+        <video id="banner-video" class="hero-video" autoplay muted loop playsinline>
+
+        </video>
 
         <!-- Background Image -->
-        <figure class="hero-video">
+        <!-- <figure class="hero-video">
             <img class="h-100 w-100" style="object-fit: cover; object-position: bottom;"
                 src="../assets/resource/night_background.png" alt="">
-        </figure>
+        </figure> -->
 
         <!-- Video Overlay -->
         <div class="hero-overlay"></div>
@@ -67,13 +67,17 @@
                         <h1 class="hero-title">Welcome to Memar Elara</h1>
                         <p class="hero-subtitle">Your trusted partner in architectural excellence and innovative design
                             solutions</p>
-                        <div class="hero-buttons">
+                        <!-- <div class="hero-buttons">
                             <button class="btn btn-primary btn-lg me-3">Get Started</button>
                             <button class="btn btn-outline-light btn-lg">Learn More</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="hero-ribbon">
+            <h4 class="ribbon-text" data-text="Memar Elara">Memar Elara</h4>
         </div>
     </section>
 
@@ -84,10 +88,10 @@
                 <div class="col-12 text-center section-heading-wrapper">
                     <div class="heading-text-wrapper">
                         <img class="heading-side-icon" src="../assets/resource/icon_7.png">
-                        <h2 class="display-6 fw-bold heading-text">Construction Quality</h2>
+                        <h2 class="heading-text">Construction Quality</h2>
                         <img class="heading-side-icon" src="../assets/resource/icon_8.png">
                     </div>
-                    <p class="text-muted heading-tagline">Excellence in every detail — materials, methods, and
+                    <p class="heading-tagline">Excellence in every detail — materials, methods, and
                         craftsmanship.</p>
                 </div>
             </div>
@@ -181,10 +185,10 @@
                 <div class="col-12 text-center section-heading-wrapper">
                     <div class="heading-text-wrapper">
                         <img class="heading-side-icon" src="../assets/resource/icon_7.png">
-                        <h2 class="display-6 fw-bold heading-text">Our Milestones</h2>
+                        <h2 class="heading-text">Our Milestones</h2>
                         <img class="heading-side-icon" src="../assets/resource/icon_8.png">
                     </div>
-                    <p class="text-muted heading-tagline">Our commitment to excellence is reflected in our statistics.
+                    <p class="heading-tagline">Our commitment to excellence is reflected in our statistics.
                     </p>
                 </div>
                 <div class="stats-image-wrapper">
@@ -193,6 +197,85 @@
             </div>
         </div>
     </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center section-heading-wrapper">
+                    <div class="heading-text-wrapper">
+                        <img class="heading-side-icon" src="../assets/resource/icon_7.png">
+                        <h2 class="heading-text">Our Testimonials</h2>
+                        <img class="heading-side-icon" src="../assets/resource/icon_8.png">
+                    </div>
+                    <p class="heading-tagline">Our commitment to excellence is reflected in our statistics.
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonials-wrapper">
+                <div class="splide" id="testimonialsSplide" aria-label="Testimonials">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-quote-icon start-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
+                                    <p class="testimonial-text">1 Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Quisquam, quos.</p>
+                                    <div class="testimonial-quote-icon end-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-quote-icon start-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
+                                    <p class="testimonial-text">2 Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Quisquam, quos.</p>
+                                    <div class="testimonial-quote-icon end-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-quote-icon start-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
+                                    <p class="testimonial-text">3 Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Quisquam, quos.</p>
+                                    <div class="testimonial-quote-icon end-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="splide__slide">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-quote-icon start-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
+                                    <p class="testimonial-text">4 Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                        Quisquam, quos.</p>
+                                    <div class="testimonial-quote-icon end-quote">
+                                        <i class="bi bi-quote"></i>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <main>
 
