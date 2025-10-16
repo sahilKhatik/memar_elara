@@ -309,7 +309,7 @@ body {
             
             .filter-btn {
                 padding: 6px 15px;
-                font-size: 0.75rem;
+                font-size: 0.65rem;
             }
             
             .project-img-container {
@@ -350,29 +350,29 @@ body {
         .project-filter {
             margin: 60px 0 40px;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
+            align-items: center;
             flex-wrap: wrap;
             gap: 10px;
         }
         
         .filter-btn {
-            background: transparent;
-            border: 2px solid var(--secondary-color);
+            background: transparent;    
+            border: 1px solid var(--me-golden-hex);
             color: var(--dark-color);
-            padding: 8px 25px;
+            padding: 5px 16px;
             border-radius: 30px;
             font-weight: 600;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.65rem;
             letter-spacing: 1px;
         }
         
         .filter-btn:hover, 
         .filter-btn.active {
-            background: var(--secondary-color);
+            background: var(--me-brown-hex);
             color: white;
-            transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
         
@@ -438,7 +438,7 @@ body {
         }
         
         .project-category {
-            color: var(--secondary-color);
+            color: var(--me-brown-hex);
             font-weight: 600;
             text-transform: uppercase;
             font-size: 0.8rem;
@@ -460,7 +460,7 @@ body {
         }
         
         .view-project {
-            color: var(--primary-color);
+            color: var(--me-golden-hex);
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
@@ -472,7 +472,7 @@ body {
         }
         
         .view-project:hover {
-            color: var(--secondary-color);
+            color: var(--me-brown-hex);
             transform: translateX(5px);
         }
         
@@ -485,7 +485,7 @@ body {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: var(--secondary-color);
+            background: var(--me-golden-hex);
             color: white;
             padding: 5px 15px;
             border-radius: 20px;

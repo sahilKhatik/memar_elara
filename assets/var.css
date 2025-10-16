@@ -3,6 +3,8 @@
     --me-brown-rgb: 93, 31, 45;
     --me-golden-hex: #9E772C;
     --me-golden-rgb: 158, 119, 44;
+    --dark-color: #1a1a1a;
+    --light-color: #f8f9fa;
 
     /* Breakpoints (Mobile → Desktop) */
     --breakpoint-xs: 480px;
