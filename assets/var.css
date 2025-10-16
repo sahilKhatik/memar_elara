@@ -18,3 +18,26 @@
     --breakpoint-2xl: 1920px;
     /* 2XL - Widescreen / 1080p+ monitors */
 }
+
+.h-100 {
+    height: 100% !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.heading-text-wrapper {
+    display: flex;
+    column-gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading-text-wrapper .heading-text {
+    color: var(--me-brown-hex);
+}
+
+.heading-side-icon {
+    height: 50px;
+}
