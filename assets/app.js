@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     gsap.registerPlugin(SplitText)
 
     // Navbar scroll effect
-    initializeHomePageBannerVideo();
+    initializeHomePageMemarVideo();
     const navbar = document.getElementById('mainNavbar');
 
     // Function to handle scroll effect
@@ -157,14 +157,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
         testimonialsSplide.mount();
     }
+
+    // Function to handle animations for memar-section
+    function animateMemarSection() {
+        const memarTitle = document.querySelector('.memar-title');
+        const memarSubtitle = document.querySelector('.memar-subtitle');
+
+        const options = {
+            root: null, // Use the viewport as root
+            rootMargin: '0px',
+            threshold: 0.5 // Trigger animation when 50% of the element is visible
+        };
+
+        const callback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fadeInUp');
+                    observer.unobserve(entry.target);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(callback, options);
+
+        if (memarTitle) observer.observe(memarTitle);
+        if (memarSubtitle) observer.observe(memarSubtitle);
+    }
+
+    // Initialize the animation
+    animateMemarSection();
 });
 
 const baseURL = '../';
 
-function initializeHomePageBannerVideo() {
-    const video = document.getElementById("banner-video");
+function initializeHomePageMemarVideo() {
+    const video = document.getElementById("memar-video");
     if (!video) {
-        console.warn("Banner video element not found");
+        console.warn("Memar video element not found");
         return;
     }
 

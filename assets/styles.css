@@ -13,7 +13,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 0;
     background-color: var(--me-bg);
-    /* Remove padding since hero section will be full height */
 }
 
 /* Navbar Styles */
@@ -116,8 +115,7 @@ body {
     justify-content: center;
 }
 
-/* Background Video */
-.hero-video {
+.hero-media {
     position: absolute;
     top: 0;
     left: 0;
@@ -127,8 +125,28 @@ body {
     z-index: -2;
 }
 
-/* Video Overlay */
-.hero-overlay {
+/* Memar Section */
+#memar-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.memar-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.memar-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -138,116 +156,34 @@ body {
             rgba(var(--me-brown-rgb), 0.5) 0%,
             rgba(var(--me-golden-rgb), 0.3) 50%,
             rgba(var(--me-brown-rgb), 0.6) 100%);
-    z-index: -1;
 }
 
-/* Hero Content */
-.hero-content {
-    position: relative;
+.memar-content {
     z-index: 1;
     color: white;
     text-align: center;
 }
 
-.hero-title {
+.memar-title {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    animation: fadeInUp 1s ease-out;
+    opacity: 0;
 }
 
-.hero-subtitle {
+.memar-subtitle {
     font-size: 1.25rem;
     font-weight: 400;
     margin-bottom: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    animation: fadeInUp 1s ease-out 0.3s both;
+    opacity: 0;
 }
 
-.hero-buttons {
-    animation: fadeInUp 1s ease-out 0.6s both;
-}
-
-/* Button Styles for Hero */
-.hero-content .btn-primary {
-    background-color: var(--me-brown-hex);
-    border-color: var(--me-brown-hex);
-    padding: 0.75rem 2rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.hero-content .btn-primary:hover {
-    background-color: var(--me-golden-hex);
-    border-color: var(--me-golden-hex);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.hero-content .btn-outline-light {
-    border-color: white;
-    color: white;
-    padding: 0.75rem 2rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.hero-content .btn-outline-light:hover {
-    background-color: white;
-    color: var(--me-brown-hex);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Hero Section */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-        max-width: 250px;
-    }
-}
-
-@media (max-width: 576px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-}
-
-.hero-ribbon {
+.memar-ribbon {
     position: absolute;
-    bottom: 2rem;
-    left: 2rem;
+    bottom: 5rem;
+    right: 5rem;
     background: url('../assets/resource/texture.png');
     background-size: cover;
     color: #fff;
@@ -256,15 +192,12 @@ body {
     box-shadow: 2px 2px 5px #000;
 }
 
-.hero-ribbon .ribbon-text {
+.memar-ribbon-text {
     margin: 0;
     color: var(--me-bg);
-    /* background-image: url('../assets/resource/texture_3.png');
-    background-position: top right;
-    filter: brightness(2);
-    -webkit-background-clip: text;
-    background-clip: text; */
 }
+
+/* Memar Section End */
 
 /* Construction Quality Section */
 #construction-quality {
