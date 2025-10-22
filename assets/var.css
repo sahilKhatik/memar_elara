@@ -1,3 +1,9 @@
+/* 
+@author: Khatik Sahil 
+@version: 1.0.0 
+@since: 2025-10-22 
+*/
+/*---------------------------------- CSS Variables ----------------------------------*/
 :root {
     --me-brown-hex: #5D1F2D;
     --me-brown-rgb: 93, 31, 45;
@@ -23,6 +29,7 @@
     /* 2XL - Widescreen / 1080p+ monitors */
 }
 
+/*---------------------------------- Utility Classes ----------------------------------*/
 .h-100 {
     height: 100% !important;
 }

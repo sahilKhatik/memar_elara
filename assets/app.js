@@ -1,6 +1,10 @@
 // Main JavaScript for Memar Elara
 
 document.addEventListener('DOMContentLoaded', function () {
+    // GSAP
+    gsap.registerPlugin(ScrollTrigger)
+    gsap.registerPlugin(SplitText)
+
     // Navbar scroll effect
     initializeHomePageBannerVideo();
     const navbar = document.getElementById('mainNavbar');
@@ -67,6 +71,64 @@ document.addEventListener('DOMContentLoaded', function () {
     // Set initial active link
     updateActiveLink();
 
+    // quality section animation
+    const overlay = document.querySelector(".cq-animated-overlay");
+    const overlayText = overlay.querySelector(".cq-animated-overlay-text");
+    if (overlay && overlayText) {
+        ScrollTrigger.create({
+            trigger: "#construction-quality",
+            start: "top 80%",
+            once: true, // triggers only once
+            onEnter: () => {
+                // Timeline for overlay animation
+                const tl = gsap.timeline({
+                    onComplete: () => {
+                        // Start qualitySplide only after overlay effect finishes
+                        localStorage.setItem("overlayShown", "true");
+                        const qualitySplideEl = document.getElementById('qualitySplide');
+                        if (qualitySplideEl && window.Splide) {
+                            const splide = new Splide(qualitySplideEl, {
+                                type: 'loop',
+                                perPage: 1,
+                                perMove: 1,
+                                gap: '1.5rem',
+                                speed: 700,
+                                autoplay: true,
+                                interval: 5000,
+                                pauseOnHover: true,
+                                arrows: true,
+                                pagination: false,
+                                drag: true,
+                                keyboard: 'global',
+                                breakpoints: {
+                                    992: { gap: '1rem' },
+                                    576: { gap: '0.75rem' }
+                                }
+                            });
+
+                            // Progress bar
+                            const progressBar = document.getElementById('qualityProgress');
+                            if (progressBar) {
+                                splide.on('mounted move', function () {
+                                    const end = splide.Components.Controller.getEnd() + 1;
+                                    const rate = Math.min((splide.index + 1) / end, 1);
+                                    progressBar.style.width = String(100 * rate) + '%';
+                                });
+                            }
+                            splide.mount();
+                        }
+                    }
+                });
+
+                tl.to(overlay, { opacity: 1, duration: 0.5, pointerEvents: "auto" })
+                    .to(overlayText, { opacity: 1, duration: 2 }, "-=0.3")
+                    .to({}, { duration: 2 }) // hold for 2s
+                    .to(overlayText, { opacity: 0, duration: 0.5 })
+                    .to(overlay, { opacity: 0, duration: 1, pointerEvents: "none" });
+            }
+        });
+    }
+
     // Initialize Splide for Construction Quality carousel
     const qualitySplideEl = document.getElementById('qualitySplide');
     if (qualitySplideEl && window.Splide) {
@@ -80,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
             interval: 5000,
             pauseOnHover: true,
             arrows: true,
-            pagination: true,
+            pagination: false,
             drag: true,
             keyboard: 'global',
             breakpoints: {
