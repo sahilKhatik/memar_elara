@@ -53,6 +53,7 @@ body {
     color: var(--me-brown-hex) !important;
     font-weight: 500;
     font-size: 1rem;
+    font-weight: 700;
     text-decoration: none;
     padding: 0.5rem 1rem 0;
     border-radius: 5px;
@@ -293,10 +294,22 @@ body {
 
 }
 
+/* .testimonial-text-wrapper {
+    transform: skew(-20deg);
+    width: 70%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--me-bg);
+} */
+
 .testimonial-text {
     color: #fff;
     font-size: 1.5rem;
     text-align: center;
+    /* transform: skew(20deg); */
 }
 
 /* Alternate image/text per slide on large screens */
