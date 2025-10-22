@@ -3,6 +3,8 @@
     --me-brown-rgb: 93, 31, 45;
     --me-golden-hex: #9E772C;
     --me-golden-rgb: 158, 119, 44;
+    --me-bg: #FFF5EC;
+    --me-bg-rgb: 255, 245, 236;
     --dark-color: #1a1a1a;
     --light-color: #f8f9fa;
 
@@ -19,4 +21,37 @@
     /* Extra Large - Desktop */
     --breakpoint-2xl: 1920px;
     /* 2XL - Widescreen / 1080p+ monitors */
+}
+
+.h-100 {
+    height: 100% !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.heading-text-wrapper {
+    display: flex;
+    column-gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading-text-wrapper .heading-text {
+    color: var(--me-brown-hex);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.heading-side-icon {
+    height: 50px;
+}
+
+.section-heading-wrapper .heading-tagline {
+    font-size: 1rem;
+    margin-top: 5px;
+    font-weight: 600;
+    color: var(--me-golden-hex);
 }
