@@ -186,6 +186,70 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Initialize the animation
     animateMemarSection();
+
+    // Stats counter animation
+    function initStatsCounter() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const statLabels = document.querySelectorAll('.stat-label');
+
+        // Set initial opacity for labels
+        gsap.set(statLabels, { opacity: 0, y: 0 });
+
+        statNumbers.forEach((statElement) => {
+            // Extract the full text (e.g., "18+")
+            const fullText = statElement.textContent;
+
+            // Extract the number and any suffix (e.g., "18" and "+")
+            const numberMatch = fullText.match(/(\d+\.?\d*)(.*)$/);
+
+            if (!numberMatch) return;
+
+            const targetValue = parseFloat(numberMatch[1]);
+            const suffix = numberMatch[2]; // e.g., "+", "K", "M", etc.
+
+            // Set initial value to 0
+            statElement.textContent = '0' + suffix;
+
+            // Create the counter object for GSAP to animate
+            const counter = { value: 0 };
+
+            // Create ScrollTrigger animation
+            ScrollTrigger.create({
+                trigger: '#stats',
+                start: 'top 80%', // Animation starts when stats section is 80% from top of viewport
+                once: true, // Only trigger once
+                onEnter: () => {
+                    // Animate the counter
+                    gsap.to(counter, {
+                        value: targetValue,
+                        duration: 1, // Duration of counting animation
+                        ease: 'power1.out',
+                        onUpdate: function () {
+                            // Update the element text with the current counter value
+                            const currentValue = Math.floor(counter.value);
+                            statElement.textContent = currentValue + suffix;
+                        },
+                        onComplete: function () {
+                            // Ensure final value is exact
+                            statElement.textContent = targetValue + suffix;
+                        }
+                    });
+
+                    // Animate all stat labels with fade in effect
+                    gsap.to(statLabels, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 2,
+                        ease: 'power2.out',
+                        stagger: 0.2 // Stagger effect if multiple labels
+                    });
+                }
+            });
+        });
+    }
+
+    // Initialize stats counter
+    initStatsCounter();
 });
 
 const baseURL = '../';
