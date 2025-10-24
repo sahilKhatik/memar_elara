@@ -365,6 +365,12 @@ body {
     padding: 5px 30px;
     border-radius: 5px;
     box-shadow: 2px 2px 5px #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.memar-ribbon:hover {
+    transform: scale(1.05);
 }
 
 .memar-ribbon-text {
