@@ -13,6 +13,7 @@
     --me-bg-rgb: 255, 245, 236;
     --dark-color: #1a1a1a;
     --light-color: #f8f9fa;
+    --header-height: 80px;
 
     /* Breakpoints (Mobile → Desktop) */
     --breakpoint-xs: 480px;

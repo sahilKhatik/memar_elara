@@ -58,10 +58,37 @@
         <!-- Hero Section -->
         <section id="home" class="hero-section hero-memar-scroll-snap">
             <!-- Background Image -->
-            <figure class="hero-media">
+            <!-- <figure class="hero-media">
                 <img class="h-100 w-100" style="object-fit: cover; object-position: bottom;"
                     src="../assets/resource/night_background.png" alt="">
-            </figure>
+            </figure> -->
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <div class="hero-branding">
+                        <img src="../assets/resource/logo_2.png" class="hero-branding-img" alt="Memar Group">
+                    </div>
+                </div>
+                <div class="hero-media-wrapper">
+                    <div class="splide" id="heroSplide" aria-label="Hero Carousel">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide">
+                                    <img src="../assets/images/const_1.jpg" alt="Construction Project 1"
+                                        class="hero-carousel-img">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="../assets/images/const_2.jpg" alt="Construction Project 2"
+                                        class="hero-carousel-img">
+                                </li>
+                                <li class="splide__slide">
+                                    <img src="../assets/images/const_3.jpg" alt="Construction Project 3"
+                                        class="hero-carousel-img">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="memar-section" class="hero-memar-scroll-snap">
@@ -85,9 +112,9 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-8 text-center">
                             <h1 class="memar-title">Welcome to Memar Elara</h1>
-                            <p class="memar-subtitle">Your trusted partner in architectural excellence and innovative
+                            <!-- <p class="memar-subtitle">Your trusted partner in architectural excellence and innovative
                                 design
-                                solutions</p>
+                                solutions</p> -->
                             <!-- <div class="hero-buttons">
                             <button class="btn btn-primary btn-lg me-3">Get Started</button>
                             <button class="btn btn-outline-light btn-lg">Learn More</button>
@@ -108,96 +135,102 @@
                 <div class="cq-animated-overlay">
                     <h2 class="cq-animated-overlay-text">We Don't Just Build Structures — We Build Trust</h2>
                 </div>
-                <div class="row mb-4">
-                    <div class="col-12 text-center section-heading-wrapper">
-                        <div class="heading-text-wrapper">
-                            <img class="heading-side-icon" src="../assets/resource/icon_7.png">
-                            <h2 class="heading-text">Strength Meets Design</h2>
-                            <img class="heading-side-icon" src="../assets/resource/icon_8.png">
+                <div class="cq-content-wrapper">
+                    <div class="row mb-4">
+                        <div class="col-12 text-center section-heading-wrapper">
+                            <div class="heading-text-wrapper">
+                                <img class="heading-side-icon" src="../assets/resource/icon_7.png">
+                                <h2 class="heading-text">Strength Meets Design</h2>
+                                <img class="heading-side-icon" src="../assets/resource/icon_8.png">
+                            </div>
+                            <p class="heading-tagline">Excellence in every detail — materials, methods, and
+                                craftsmanship.</p>
                         </div>
-                        <p class="heading-tagline">Excellence in every detail — materials, methods, and
-                            craftsmanship.</p>
-                    </div>
-                </div>
-
-                <div class="splide" id="qualitySplide" aria-label="Construction Quality Highlights">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <!-- Slide 1 (odd): media left, text right -->
-                            <li class="splide__slide">
-                                <div class="row align-items-center g-4">
-                                    <div class="col-lg-6">
-                                        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
-                                            <!-- <video class="w-100 h-100" autoplay muted loop playsinline>
-                                            <source src="../assets/videos/hero-video.mp4" type="video/mp4">
-                                        </video> -->
-                                            <img src="../assets/images/const_1.jpg" alt="Precision construction methods"
-                                                class="w-100 h-100 object-fit-cover">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <h3 class="fw-bold mb-3">Premium Materials</h3>
-                                        <p class="text-muted mb-4">We source high-grade materials to ensure durability,
-                                            safety, and aesthetic integrity across every project.</p>
-                                        <ul class="mb-0">
-                                            <li>Certified structural steel and concrete</li>
-                                            <li>Moisture and thermal-resistant assemblies</li>
-                                            <li>Long-life finishes and fixtures</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- Slide 2: reverse on large screens to alternate -->
-                            <li class="splide__slide">
-                                <div class="row align-items-center g-4">
-                                    <div class="col-lg-6">
-                                        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
-                                            <img src="../assets/images/const_2.jpg" alt="Precision construction methods"
-                                                class="w-100 h-100 object-fit-cover">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <h3 class="fw-bold mb-3">Precision Methods</h3>
-                                        <p class="text-muted mb-4">From foundation to finish, our teams follow rigorous
-                                            QA/QC procedures with documented checkpoints.</p>
-                                        <ul class="mb-0">
-                                            <li>BIM-driven coordination</li>
-                                            <li>On-site testing and inspection</li>
-                                            <li>ISO-aligned process controls</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <!-- Slide 3: media left, text right again -->
-                            <li class="splide__slide">
-                                <div class="row align-items-center g-4">
-                                    <div class="col-lg-6">
-                                        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
-                                            <img src="../assets/images/const_3.jpg" alt="Skilled Craftsmanship"
-                                                class="w-100 h-100 object-fit-cover">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <h3 class="fw-bold mb-3">Skilled Craftsmanship</h3>
-                                        <p class="text-muted mb-4">Our crews combine modern tools with seasoned
-                                            expertise to
-                                            achieve refined details that last.</p>
-                                        <ul class="mb-0">
-                                            <li>Certified trades and ongoing training</li>
-                                            <li>Mockups and sample approvals</li>
-                                            <li>Finishing standards and punchlist rigor</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
 
-                    <!-- Progress Bar -->
-                    <div class="splide-progress mt-4">
-                        <div class="splide-progress-bar" id="qualityProgress"></div>
+                    <div class="splide" id="qualitySplide" aria-label="Construction Quality Highlights">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <!-- Slide 1 (odd): media left, text right -->
+                                <li class="splide__slide">
+                                    <div class="row align-items-center g-4">
+                                        <div class="col-lg-6">
+                                            <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+                                                <!-- <video class="w-100 h-100" autoplay muted loop playsinline>
+                                                <source src="../assets/videos/hero-video.mp4" type="video/mp4">
+                                            </video> -->
+                                                <img src="../assets/images/const_1.jpg"
+                                                    alt="Precision construction methods"
+                                                    class="w-100 h-100 object-fit-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h3 class="fw-bold mb-3">Premium Materials</h3>
+                                            <p class="text-muted mb-4">We source high-grade materials to ensure
+                                                durability,
+                                                safety, and aesthetic integrity across every project.</p>
+                                            <ul class="mb-0">
+                                                <li>Certified structural steel and concrete</li>
+                                                <li>Moisture and thermal-resistant assemblies</li>
+                                                <li>Long-life finishes and fixtures</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Slide 2: reverse on large screens to alternate -->
+                                <li class="splide__slide">
+                                    <div class="row align-items-center g-4">
+                                        <div class="col-lg-6">
+                                            <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+                                                <img src="../assets/images/const_2.jpg"
+                                                    alt="Precision construction methods"
+                                                    class="w-100 h-100 object-fit-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h3 class="fw-bold mb-3">Precision Methods</h3>
+                                            <p class="text-muted mb-4">From foundation to finish, our teams follow
+                                                rigorous
+                                                QA/QC procedures with documented checkpoints.</p>
+                                            <ul class="mb-0">
+                                                <li>BIM-driven coordination</li>
+                                                <li>On-site testing and inspection</li>
+                                                <li>ISO-aligned process controls</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Slide 3: media left, text right again -->
+                                <li class="splide__slide">
+                                    <div class="row align-items-center g-4">
+                                        <div class="col-lg-6">
+                                            <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+                                                <img src="../assets/images/const_3.jpg" alt="Skilled Craftsmanship"
+                                                    class="w-100 h-100 object-fit-cover">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h3 class="fw-bold mb-3">Skilled Craftsmanship</h3>
+                                            <p class="text-muted mb-4">Our crews combine modern tools with seasoned
+                                                expertise to
+                                                achieve refined details that last.</p>
+                                            <ul class="mb-0">
+                                                <li>Certified trades and ongoing training</li>
+                                                <li>Mockups and sample approvals</li>
+                                                <li>Finishing standards and punchlist rigor</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="splide-progress mt-4">
+                            <div class="splide-progress-bar" id="qualityProgress"></div>
+                        </div>
                     </div>
                 </div>
             </div>

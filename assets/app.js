@@ -7,6 +7,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Navbar scroll effect
     initializeHomePageMemarVideo();
+
+    // Initialize Splide for Hero carousel
+    const heroSplideEl = document.getElementById('heroSplide');
+    if (heroSplideEl && window.Splide) {
+        const heroSplide = new Splide(heroSplideEl, {
+            type: 'fade',
+            rewind: true,
+            perPage: 1,
+            perMove: 1,
+            gap: 0,
+            speed: 1000,
+            autoplay: true,
+            interval: 4000,
+            pauseOnHover: false,
+            arrows: false,
+            pagination: true,
+            drag: true,
+            keyboard: 'global',
+            heightRatio: 1,
+            height: '100%',
+        });
+
+        heroSplide.mount();
+    }
     const navbar = document.getElementById('mainNavbar');
 
     // Function to handle scroll effect
@@ -106,11 +130,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         qualitySplide.mount();
+        qualitySplide.root.classList.remove('is-initialized', 'is-rendered');
+        qualitySplide.root.style.visibility = 'hidden';
         qualitySplide.Components.Autoplay.pause();
     }
 
     const overlay = document.querySelector(".cq-animated-overlay");
     const overlayText = overlay.querySelector(".cq-animated-overlay-text");
+    // const cqContent = document.querySelector(".cq-content-wrapper");
     if (overlay && overlayText) {
         ScrollTrigger.create({
             trigger: "#construction-quality",
@@ -119,16 +146,23 @@ document.addEventListener('DOMContentLoaded', function () {
             onEnter: () => {
                 // Timeline for overlay animation
                 const tl = gsap.timeline({
+                    onStart: () => {
+                        setTimeout(() => {
+                            document.querySelector('.cq-content-wrapper').style.visibility = 'visible';
+                            qualitySplide.root.classList.add('is-initialized', 'is-rendered');
+                            qualitySplide.root.style.visibility = 'visible';
+                        }, 1000);
+                    },
                     onComplete: () => {
                         qualitySplide.Components.Autoplay.play();
                     }
                 });
 
-                tl.to(overlay, { opacity: 1, duration: 0.5, pointerEvents: "auto" })
-                    .to(overlayText, { opacity: 1, duration: 2 }, "-=0.3")
-                    .to({}, { duration: 2 }) // hold for 2s
-                    .to(overlayText, { opacity: 0, duration: 0.5 })
-                    .to(overlay, { opacity: 0, duration: 1, pointerEvents: "none" });
+                tl.to(overlay, { opacity: 1, duration: 1, pointerEvents: "auto" })
+                    .to(overlayText, { opacity: 1, duration: 1 }, "-=0.3")
+                    .to({}, { duration: 1 }) // hold for 2s
+                    .to(overlayText, { opacity: 0, duration: 2 })
+                    .to(overlay, { opacity: 0, duration: 2, pointerEvents: "none" })
             }
         });
     }
@@ -216,13 +250,13 @@ document.addEventListener('DOMContentLoaded', function () {
             // Create ScrollTrigger animation
             ScrollTrigger.create({
                 trigger: '#stats',
-                start: 'top 80%', // Animation starts when stats section is 80% from top of viewport
+                start: '20% 80%',
                 once: true, // Only trigger once
                 onEnter: () => {
                     // Animate the counter
                     gsap.to(counter, {
                         value: targetValue,
-                        duration: 1, // Duration of counting animation
+                        duration: 2, // Duration of counting animation
                         ease: 'power1.out',
                         onUpdate: function () {
                             // Update the element text with the current counter value

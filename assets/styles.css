@@ -20,9 +20,10 @@ body {
     background-color: rgba(var(--me-bg-rgb), 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
     transition: all 0.3s ease;
-    height: 80px;
+    height: var(--header-height);
 }
 
 .logo-wrapper {
@@ -198,6 +199,102 @@ body {
     z-index: -2;
 }
 
+.hero-wrapper {
+    padding-top: var(--header-height);
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--me-brown-hex); */
+}
+
+.hero-branding {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-branding-img {
+    width: 100%;
+    position: relative;
+}
+
+/* Shimmer effect */
+.hero-branding::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 100%);
+    animation: shimmer 3s infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.hero-media-wrapper {
+    /* background-color: var(--me-golden-hex); */
+    position: relative;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+#heroSplide {
+    width: 100%;
+    height: 100%;
+}
+
+#heroSplide .splide__track,
+#heroSplide .splide__list,
+#heroSplide .splide__slide {
+    height: 100%;
+}
+
+.hero-carousel-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#heroSplide .splide__pagination {
+    bottom: 2rem;
+}
+
+#heroSplide .splide__pagination__page {
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+}
+
+#heroSplide .splide__pagination__page.is-active {
+    background: var(--me-golden-hex);
+    transform: scale(1.3);
+}
+
 /* Memar Section */
 #memar-section {
     position: relative;
@@ -238,11 +335,16 @@ body {
 }
 
 .memar-title {
-    font-size: 3.5rem;
+    font-size: 7rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
     opacity: 0;
+    text-shadow:
+        -5px -5px 0 rgba(var(--me-brown-rgb), 0.5),
+        5px -5px 0 rgba(var(--me-brown-rgb), 0.5),
+        -5px 5px 0 rgba(var(--me-brown-rgb), 0.5),
+        5px 5px 0 rgba(var(--me-brown-rgb), 0.5);
 }
 
 .memar-subtitle {
@@ -312,7 +414,7 @@ body {
     z-index: 10;
     background-color: var(--me-brown-hex);
     pointer-events: none;
-    opacity: 1;
+    opacity: 0;
     padding: 4rem;
     border-radius: 10px;
 }
@@ -324,6 +426,10 @@ body {
     opacity: 0;
     text-align: center;
     line-height: 1.5;
+}
+
+.cq-content-wrapper {
+    visibility: hidden;
 }
 
 .stats-image-wrapper {
