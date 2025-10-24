@@ -10,7 +10,7 @@
 @import url('var.css');
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 0;
     background-color: var(--me-bg);
 }
@@ -22,10 +22,41 @@ body {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1rem 0;
     transition: all 0.3s ease;
+    height: 80px;
+}
+
+.logo-wrapper {
+    --logo-animation-duration: 0.5s;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .logo-img {
+    position: relative;
     height: 40px;
+    top: 18px;
+    transition: height var(--logo-animation-duration) ease, top var(--logo-animation-duration) ease;
+}
+
+.logo-name {
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--logo-animation-duration) ease, visibility var(--logo-animation-duration) ease;
+}
+
+.logo-wrapper:hover .logo-name {
+    opacity: 1;
+    visibility: visible;
+}
+
+.logo-wrapper:hover .logo-img {
+    height: 30px;
+    top: 0;
 }
 
 /* Navbar when scrolled - transparent background */
@@ -59,6 +90,7 @@ body {
     border-radius: 5px;
     transition: all 0.3s ease;
     position: relative;
+    font-family: 'Libre Bodoni', serif;
 }
 
 .nav-links .nav-link:hover {
@@ -101,6 +133,46 @@ body {
     height: 100%;
     width: 0%;
     transition: width 400ms ease;
+}
+
+.heading-text {
+    font-family: 'Libre Bodoni', serif;
+}
+
+.main-content {
+    position: relative;
+}
+
+.enquire-now-btn {
+    position: fixed;
+    top: 6rem;
+    left: 5px;
+    z-index: 9999;
+    background-color: var(--me-golden-hex);
+    color: var(--light-color);
+    padding: 5px;
+    width: 130px;
+    transform: translateX(-100%) rotate(-90deg);
+    transform-origin: top right;
+    text-align: center;
+    cursor: pointer;
+}
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    background-color: var(--me-golden-hex);
+    /* mix-blend-mode: hard-light; */
+    color: var(--light-color);
+    font-size: 2.5rem;
+    border-radius: 50%;
+    z-index: 9999;
 }
 
 /*---------------------------------- Home Page Styles ----------------------------------*/
